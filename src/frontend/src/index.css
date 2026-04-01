@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 1.25rem;
+    --background: 0.93 0.04 10;
+    --foreground: 0.14 0.01 5;
+    --card: 0.97 0.03 10;
+    --card-foreground: 0.14 0.01 5;
+    --popover: 0.97 0.03 10;
+    --popover-foreground: 0.14 0.01 5;
+    --primary: 0.56 0.12 5;
+    --primary-foreground: 0.98 0.01 5;
+    --secondary: 0.92 0.04 320;
+    --secondary-foreground: 0.36 0.03 5;
+    --muted: 0.9 0.03 10;
+    --muted-foreground: 0.45 0.03 5;
+    --accent: 0.8 0.06 320;
+    --accent-foreground: 0.14 0.01 5;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.88 0.04 5;
+    --input: 0.9 0.04 5;
+    --ring: 0.56 0.12 5;
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.985 0 0;
+    --sidebar-foreground: 0.145 0 0;
+    --sidebar-primary: 0.205 0 0;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.97 0 0;
+    --sidebar-accent-foreground: 0.205 0 0;
+    --sidebar-border: 0.922 0 0;
+    --sidebar-ring: 0.708 0 0;
+    --love-rose: 0.5 0.13 5;
+    --love-blush: 0.83 0.07 10;
+    --love-lavender: 0.68 0.07 305;
+    --love-peach: 0.8 0.07 20;
+    --love-dusty-rose: 0.56 0.12 5;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "DM Sans", sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-script {
+    font-family: "Dancing Script", cursive;
+  }
+  .font-serif-display {
+    font-family: "Playfair Display", serif;
+  }
+  .font-sans-ui {
+    font-family: "DM Sans", sans-serif;
+  }
+  .glass-panel {
+    background: rgba(245, 205, 215, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(232, 184, 196, 0.6);
+  }
+  .glass-nav {
+    background: rgba(250, 220, 228, 0.78);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(232, 184, 196, 0.5);
+  }
+}
+
+@keyframes float-heart {
+  0% {
+    transform: translateY(100vh) scale(0.3) rotate(-15deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1) rotate(15deg);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-heart {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.18);
+  }
+}
+
+.heart-float {
+  animation: float-heart linear infinite;
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+
+.animate-pulse-heart {
+  animation: pulse-heart 1.5s ease-in-out infinite;
+}
+
+.love-bg {
+  background-image: url("/assets/generated/love-bg.dim_1200x900.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
